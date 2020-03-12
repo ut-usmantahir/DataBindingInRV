@@ -48,9 +48,9 @@ class MyMovieAdapter(private val context: Context, private val movieList: Mutabl
                     movieList[position].team +" CREATEDBY "+
                     movieList[position].createdby)
 
-        Glide.with(context)
-            .load(movieList[position].imageurl)
-            .into(holder.binding.imageMovie);
+//        Glide.with(context)
+//            .load(movieList[position].imageurl)
+//            .into(holder.binding.imageMovie);
        // Picasso.get().load(movieList[position].imageurl).into(holder.image)
         holder.binding.movie = movieList[position]
 //        holder.binding.txtTeam.text = movieList[position].team
@@ -76,6 +76,18 @@ class MyMovieAdapter(private val context: Context, private val movieList: Mutabl
      inner class MyViewHolder(
          val binding: LayoutMovieItemBinding
      ) : RecyclerView.ViewHolder(binding.root)
+
+    companion object {
+        @JvmStatic
+        @BindingAdapter("imageUrl")
+        fun loadImage(view: ImageView, url: String) {
+            Glide.with(view.context)
+                .load(url)
+                .into(view);
+        }
+    }
+
+
 }
 
 

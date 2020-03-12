@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
             adapter = MyMovieAdapter(baseContext, movies as MutableList<Movie>)
 
-            adapter.notifyDataSetChanged()
+//            adapter.notifyDataSetChanged()
             mainBinding.recyclerMovieList.adapter = adapter
 
         }
