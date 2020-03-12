@@ -1,0 +1,2 @@
+rootProject.name='DataBindingInRV'
+include ':app'
